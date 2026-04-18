@@ -21,7 +21,7 @@ Or add to your `pubspec.yaml`:
 
 ```yaml
 dev_dependencies:
-  pubguard: ^1.0.0
+  pubguard: ^1.0.2
 ```
 
 ## Usage
