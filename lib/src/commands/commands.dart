@@ -3,6 +3,7 @@ import 'check_command.dart';
 
 /// CLI command parser and runner for PubGuard.
 class Commands {
+  /// The argument parser for PubGuard commands.
   static final ArgParser parser = ArgParser(allowTrailingOptions: true)
     ..addCommand('check', ArgParser()
       ..addOption('format', abbr: 'f', allowed: ['table', 'json'], help: 'Output format')
@@ -18,6 +19,9 @@ class Commands {
       ..addFlag('help', abbr: 'h', help: 'Show help')
     );
 
+  /// Runs the PubGuard CLI with the given [args].
+  ///
+  /// Returns 0 on success, 1 on error.
   static Future<int> run(List<String> args) async {
     try {
       if (args.isEmpty) {

@@ -1,10 +1,15 @@
 import 'dart:io';
 import 'package:yaml/yaml.dart';
 
+/// Represents a dependency parsed from pubspec.yaml.
 class PubspecDependency {
+  /// The name of the dependency.
   final String name;
+  /// The version constraint (if specified).
   final String? version;
+  /// Whether this is a dev dependency.
   final bool isDev;
+  /// Whether this is a dependency override.
   final bool isOverride;
 
   const PubspecDependency({
@@ -15,7 +20,11 @@ class PubspecDependency {
   });
 }
 
+/// Parser for extracting dependencies from pubspec.yaml files.
 class PubspecParser {
+  /// Parses a pubspec.yaml file and returns its dependencies.
+  ///
+  /// [filePath] - Path to the pubspec.yaml file.
   Future<Map<String, PubspecDependency>> parse(String filePath) async {
     final file = File(filePath);
     if (!await file.exists()) {

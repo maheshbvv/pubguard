@@ -1,7 +1,11 @@
 import 'dart:convert';
 import '../models/package_info.dart';
 
+/// Formats health scores for output.
 class OutputFormatter {
+  /// Formats [scores] into a string.
+  ///
+  /// [format] - Output format: 'table' or 'json'.
   String format(List<HealthScore> scores, {String format = 'table'}) {
     if (format == 'json') {
       return _formatJson(scores);

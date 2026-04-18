@@ -2,14 +2,24 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../models/package_info.dart';
 
+/// Client for fetching GitHub repository data.
 class GitHubClient {
   final http.Client _client;
   final String? _token;
 
+  /// Creates a new GitHubClient.
+  ///
+  /// [client] - Optional HTTP client for making requests.
+  /// [token] - Optional GitHub token for API authentication.
   GitHubClient({http.Client? client, String? token})
       : _client = client ?? http.Client(),
         _token = token;
 
+  /// Enriches a [PackageInfo] with GitHub repository data.
+  ///
+  /// [packageInfo] - The package info to enrich.
+  /// [repoPath] - Optional GitHub repository path (e.g., "owner/repo").
+  ///             If not provided, tries to infer from repositoryUrl.
   Future<PackageInfo> enrichWithGitHubData(
     PackageInfo packageInfo,
     String? repoPath,

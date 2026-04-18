@@ -2,11 +2,18 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../models/package_info.dart';
 
+/// Client for fetching package information from pub.dev.
 class PubDevClient {
   final http.Client _client;
 
+  /// Creates a new PubDevClient.
+  ///
+  /// [client] - Optional HTTP client for making requests.
   PubDevClient({http.Client? client}) : _client = client ?? http.Client();
 
+  /// Fetches package information from pub.dev.
+  ///
+  /// [packageName] - The name of the package on pub.dev.
   Future<PackageInfo> fetchPackageInfo(String packageName) async {
     try {
       final response = await _client.get(

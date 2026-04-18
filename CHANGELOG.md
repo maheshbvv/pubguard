@@ -1,3 +1,8 @@
+## 1.0.2
+
+- Added comprehensive dartdoc comments to all public APIs
+- Improved documentation
+
 ## 1.0.1
 
 - Added dartdoc comments for public API

@@ -1,13 +1,24 @@
+/// Information about a Flutter/Dart package.
 class PackageInfo {
+  /// The name of the package.
   final String name;
+  /// The latest version.
   final String? version;
+  /// The repository URL.
   final String? repositoryUrl;
+  /// When the package was last published.
   final DateTime? latestPublished;
+  /// When the last commit was made.
   final DateTime? lastCommitDate;
+  /// Number of open issues on GitHub.
   final int openIssuesCount;
+  /// Number of closed issues on GitHub.
   final int closedIssuesCount;
+  /// Whether the package is null-safe.
   final bool isNullSafe;
+  /// Supported platforms.
   final List<String> platforms;
+  /// GitHub repository path.
   final String? gitHubRepo;
 
   const PackageInfo({
@@ -23,6 +34,7 @@ class PackageInfo {
     this.gitHubRepo,
   });
 
+  /// Creates a copy of this [PackageInfo] with optional overrides.
   PackageInfo copyWith({
     String? name,
     String? version,
@@ -50,14 +62,22 @@ class PackageInfo {
   }
 }
 
+/// Risk level for a package based on health score.
 enum RiskLevel { low, medium, high }
 
+/// Health score for a package including metrics and recommendations.
 class HealthScore {
+  /// Name of the package.
   final String packageName;
+  /// Health score (0-100).
   final int score;
+  /// Risk level based on score.
   final RiskLevel riskLevel;
+  /// Individual metric scores.
   final Map<String, double> metricScores;
+  /// Warnings about the package.
   final List<String> warnings;
+  /// Recommendations for the package.
   final List<String> recommendations;
 
   const HealthScore({
@@ -69,6 +89,7 @@ class HealthScore {
     required this.recommendations,
   });
 
+  /// Calculates [RiskLevel] from a [score].
   static RiskLevel calculateRiskLevel(int score) {
     if (score >= 70) return RiskLevel.low;
     if (score >= 40) return RiskLevel.medium;

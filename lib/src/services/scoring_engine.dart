@@ -1,6 +1,8 @@
 import '../models/package_info.dart';
 
+/// Engine for calculating health scores for packages.
 class ScoringEngine {
+  /// Weights for each metric used in scoring.
   static const Map<String, double> weights = {
     'lastUpdateRecency': 25.0,
     'openIssues': 20.0,
@@ -10,6 +12,7 @@ class ScoringEngine {
     'githubActivity': 20.0,
   };
 
+  /// Calculates a health score for a [PackageInfo].
   HealthScore calculate(PackageInfo pkg) {
     final metrics = <String, double>{};
     final warnings = <String>[];
