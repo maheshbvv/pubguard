@@ -1,0 +1,11 @@
+name: pubguard_example
+description: Example usage of pubguard
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ^3.11.0
+
+dependencies:
+  pubguard:
+    path: ../

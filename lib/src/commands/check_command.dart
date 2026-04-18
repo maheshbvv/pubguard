@@ -7,12 +7,14 @@ import '../services/github_client.dart';
 import '../services/scoring_engine.dart';
 import '../formatters/output_formatter.dart';
 
+/// Command to check dependencies in a pubspec.yaml file.
 class CheckCommand {
   final PubDevClient _pubDevClient;
   final GitHubClient _gitHubClient;
   final ScoringEngine _scoringEngine;
   final OutputFormatter _formatter;
 
+  /// Creates a new CheckCommand with optional dependencies.
   CheckCommand({
     PubDevClient? pubDevClient,
     GitHubClient? gitHubClient,
@@ -23,6 +25,7 @@ class CheckCommand {
         _scoringEngine = scoringEngine ?? ScoringEngine(),
         _formatter = formatter ?? OutputFormatter();
 
+  /// Runs the check command with the given arguments.
   Future<void> run(ArgResults args) async {
     final path = args.rest.isEmpty ? 'pubspec.yaml' : args.rest.first;
     final format = args['format'] as String? ?? 'table';

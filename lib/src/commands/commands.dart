@@ -1,6 +1,7 @@
 import 'package:args/args.dart';
 import 'check_command.dart';
 
+/// CLI command parser and runner for PubGuard.
 class Commands {
   static final ArgParser parser = ArgParser(allowTrailingOptions: true)
     ..addCommand('check', ArgParser()
