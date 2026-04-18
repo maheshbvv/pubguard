@@ -1,6 +1,5 @@
 # PubGuard - Plugin Health Monitor for Flutter
 
-[![Pub](https://img.shields.io/pub/v/pubguard)](https://pub.dev/packages/pubguard)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Plugin Health Monitor for Flutter - Analyze dependencies and get health scores.
