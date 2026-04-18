@@ -1,0 +1,22 @@
+name: pubguard
+description: Plugin Health Monitor for Flutter - Analyze dependencies and get health scores
+version: 1.0.0
+repository: https://github.com/pubguard/pubguard
+homepage: https://pub.dev/packages/pubguard
+environment:
+  sdk: ^3.11.0
+
+dependencies:
+  http: ^1.2.0
+  yaml: ^3.1.2
+  args: ^2.5.0
+  path: ^1.9.0
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.0
+  mockito: ^5.4.4
+  build_runner: ^2.4.9
+
+executables:
+  pubguard:
